@@ -1,0 +1,5 @@
+/*!
+ * Copyright by Space Squirrel Ltd.
+ */
+const t=(t,o,s,e)=>{const a={embedId:null,productHandle:null,shopDomain:null,photoRequestId:null};const n=window.location;a.embedId=t;a.photoRequestId=s;if(e.hasAttribute("data-product")){a.productHandle=e.getAttribute("data-product")}else if(n.pathname.indexOf("/products/")!==-1){a.productHandle=n.pathname.match(/\/products\/([a-zA-Z0-9\-\_\%]+)/)[1]}if(o!==""){a.shopDomain=o}else if(e.hasAttribute("data-shop")){a.shopDomain=e.getAttribute("data-shop")}else{a.shopDomain=n.hostname}return Object.assign({},a)};const o=(t,o,s={})=>{const e=t.preview.mode?false:t.analytics;if(!e)return false;const a=`${t.url.baseBeaconsUrl}${o}`;const n=Object.assign({gallery_id:t.widgetId.galleryId,shop_id:t.widgetId.shopId},s);navigator.sendBeacon(a,JSON.stringify(n))};export{t as g,o as s};
+//# sourceMappingURL=p-a8728ca2.js.map

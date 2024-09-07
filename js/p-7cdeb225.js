@@ -1,0 +1,5 @@
+/*!
+ * Copyright by Space Squirrel Ltd.
+ */
+var r=["second","minute","hour","day","week","month","year"];function n(n,t){if(t===0)return["just now","right now"];var a=r[Math.floor(t/2)];if(n>1)a+="s";return[n+" "+a+" ago","in "+n+" "+a]}var t=["秒","分钟","小时","天","周","个月","年"];function a(r,n){if(n===0)return["刚刚","片刻后"];var a=t[~~(n/2)];return[r+" "+a+"前",r+" "+a+"后"]}var e={};var u=function(r,n){e[r]=n};var i=function(r){return e[r]||e["en_US"]};var f=[60,60,24,7,365/7/12,12];function o(r){if(r instanceof Date)return r;if(!isNaN(r)||/^\d+$/.test(r))return new Date(parseInt(r));r=(r||"").trim().replace(/\.\d+/,"").replace(/-/,"/").replace(/-/,"/").replace(/(\d)T(\d)/,"$1 $2").replace(/Z/," UTC").replace(/([+-]\d\d):?(\d\d)/," $1$2");return new Date(r)}function v(r,n){var t=r<0?1:0;r=Math.abs(r);var a=r;var e=0;for(;r>=f[e]&&e<f.length;e++){r/=f[e]}r=Math.floor(r);e*=2;if(r>(e===0?9:1))e+=1;return n(r,e,a)[t].replace("%s",r.toString())}function c(r,n){var t=n?o(n):new Date;return(+t-+o(r))/1e3}var d=function(r,n,t){var a=c(r,t&&t.relativeDate);return v(a,i(n))};u("en_US",n);u("zh_CN",a);export{d as f};
+//# sourceMappingURL=p-7cdeb225.js.map

@@ -1,0 +1,5 @@
+/*!
+ * Copyright by Space Squirrel Ltd.
+ */
+const s=s=>s.preview.mode?false:s.analytics;const e=s=>s.modals.uploadOpen||s.modals.popupOpen;const n=(s,e=-1)=>{const{uploadOpen:n,popupOpen:t}=s.modals;const i=s.settings.display_type;const r=n||t;if(r)return-1;if(!r&&i==="slider"){const{realIndex:n,slidesPerView:t}=s.slider;const i=s.settings.slideshow_style==="material"?t-1:t;return e<n+i&&e>=n?0:-1}if(!r&&["grid","collage"].includes(i)){return 0}return 0};const t=s=>{const e=s.size.isDesktopScreen?(100-s.settings.item_padding*(s.settings.gallery_photos_per_row-1))/s.settings.gallery_photos_per_row:(100-s.settings.item_mobile_padding*(s.settings.gallery_mobile_photos_per_row-1))/s.settings.gallery_mobile_photos_per_row;const n=s.size.widgetWidth*e/100;let t="size-md";if(n<160)t="size-xs";if(n>=160)t="size-sm";if(n>240)t="size-md";if(n>480)t="size-lg";return t};export{t as a,n as b,s as g,e as i};
+//# sourceMappingURL=p-0243f586.js.map
